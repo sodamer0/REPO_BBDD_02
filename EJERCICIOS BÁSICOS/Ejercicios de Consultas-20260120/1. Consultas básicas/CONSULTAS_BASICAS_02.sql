@@ -15,3 +15,13 @@ Muestra el código y nombre de las categorías del personal.
 	ORDER BY departamento ;
 	
 -- Muestra toda la información de la tabla departamento.
+	
+	SELECT *
+	FROM departamento d 
+	ORDER BY dpto ASC;
+	
+-- Muestra el código y nombre de las categorías del personal.
+	
+	SELECT categoria, titulo
+	FROM categoria c 
+	ORDER BY categoria ASC;
