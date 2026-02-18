@@ -1,0 +1,96 @@
+================================================================================
+TABLA RESUMEN DE EXPRESIONES REGULARES (REGEXP) PARA MYSQL
+================================================================================
+
+EXPRESIÓN | DESCRIPCIÓN | EJEMPLO
+================================================================================
+
+.         | Cualquier carácter único | a.c coincide con "abc", "adc"
+
+*         | Cero o más repeticiones del carácter anterior | ab*c coincide con "ac", "abc", "abbc"
+
++         | Una o más repeticiones del carácter anterior | ab+c coincide con "abc", "abbc" (no "ac")
+
+?         | Cero o una repetición del carácter anterior | ab?c coincide con "ac", "abc"
+
+^         | Inicio de la cadena | ^Juan coincide si empieza con "Juan"
+
+$         | Fin de la cadena | Juan$ coincide si termina con "Juan"
+
+[abc]     | Cualquier carácter dentro del corchete | [aeiou] coincide con vocales
+
+[^abc]    | Cualquier carácter NO en el corchete | [^0-9] coincide con no dígitos
+
+[a-z]     | Rango de caracteres | [a-z] coincide con letras minúsculas
+
+[0-9]     | Rango numérico | [0-9] coincide con dígitos
+
+\d        | Dígito (0-9) | \d{3} coincide con 3 dígitos
+
+\D        | No dígito | Coincide con caracteres que no son dígitos
+
+\w        | Carácter de palabra (letras, dígitos, _) | \w+ coincide con palabras
+
+\W        | No carácter de palabra | Coincide con espacios, puntuación
+
+\s        | Espacio en blanco | \s coincide con espacios, tabulaciones
+
+\S        | No espacio en blanco | Coincide con caracteres visibles
+
+{n}       | Exactamente n repeticiones | a{3} coincide con "aaa"
+
+{n,m}     | Entre n y m repeticiones | a{2,4} coincide con "aa", "aaa", "aaaa"
+
+{n,}      | n o más repeticiones | a{2,} coincide con "aa", "aaa", "aaaa"...
+
+\|        | OR (alternancia) | gato\|perro coincide con "gato" o "perro"
+
+()        | Grupo (agrupación) | (ab)+ coincide con "ab", "abab"
+
+================================================================================
+EJEMPLOS DE USO EN MYSQL
+================================================================================
+
+-- Productos que empiezan con "A"
+SELECT * FROM producto WHERE nombre REGEXP '^A';
+
+-- Productos que terminan con "o"
+SELECT * FROM producto WHERE nombre REGEXP 'o$';
+
+-- Códigos con exactamente 3 dígitos
+SELECT * FROM pedido WHERE codigo_pedido REGEXP '^[0-9]{3}$';
+
+-- Nombres que contienen números
+SELECT * FROM cliente WHERE nombre REGEXP '[0-9]';
+
+-- Emails válidos (patrón simple)
+SELECT * FROM cliente WHERE email REGEXP '^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$';
+
+-- Teléfonos con formato XXX-XXX-XXXX
+SELECT * FROM cliente WHERE telefono REGEXP '^[0-9]{3}-[0-9]{3}-[0-9]{4}$';
+
+-- Productos cuyo nombre contiene "gato" o "perro"
+SELECT * FROM producto WHERE nombre REGEXP 'gato|perro';
+
+-- Nombres que empiezan con vocal
+SELECT * FROM cliente WHERE nombre REGEXP '^[aeiouAEIOU]';
+
+-- Campos que contienen solo letras (sin números ni caracteres especiales)
+SELECT * FROM cliente WHERE nombre REGEXP '^[a-zA-Z ]+$';
+
+-- Códigos con al menos un dígito
+SELECT * FROM producto WHERE codigo REGEXP '[0-9]';
+
+================================================================================
+NOTA IMPORTANTE
+================================================================================
+
+En MySQL moderno se recomienda usar LIKE para patrones simples, reservando 
+REGEXP para búsquedas más complejas.
+
+LIKE es más rápido para patrones simples:
+- SELECT * FROM tabla WHERE nombre LIKE 'A%';  (empieza con A)
+- SELECT * FROM tabla WHERE nombre LIKE '%o';  (termina con o)
+
+REGEXP es más potente para patrones complejos:
+- SELECT * FROM tabla WHERE nombre REGEXP '^[A-Z]{3}[0-9]{2}$';
