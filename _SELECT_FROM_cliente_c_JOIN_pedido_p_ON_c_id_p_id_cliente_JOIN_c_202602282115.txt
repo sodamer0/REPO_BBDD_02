@@ -1,0 +1,18 @@
+|id |nombre|apellido1|apellido2|ciudad |categoria|id |total   |fecha     |id_cliente|id_comercial|id |nombre |apellido1|apellido2|comision|
+|---|------|---------|---------|-------|---------|---|--------|----------|----------|------------|---|-------|---------|---------|--------|
+|5  |Marcos|Loyola   |Méndez   |Almería|200      |1  |150.5   |2017-10-05|5         |2           |2  |Juan   |Gómez    |López    |0.13    |
+|1  |Aarón |Rivero   |Gómez    |Almería|100      |2  |270.65  |2016-09-10|1         |5           |5  |Antonio|Carretero|Ortega   |0.12    |
+|2  |Adela |Salas    |Díaz     |Granada|200      |3  |65.26   |2017-10-05|2         |1           |1  |Daniel |Sáez     |Vega     |0.15    |
+|8  |Pepe  |Ruiz     |Santana  |Huelva |200      |4  |110.5   |2016-08-17|8         |3           |3  |Diego  |Flores   |Salas    |0.11    |
+|5  |Marcos|Loyola   |Méndez   |Almería|200      |5  |948.5   |2017-09-10|5         |2           |2  |Juan   |Gómez    |López    |0.13    |
+|7  |Pilar |Ruiz     |         |Sevilla|300      |6  |2,400.6 |2016-07-27|7         |1           |1  |Daniel |Sáez     |Vega     |0.15    |
+|2  |Adela |Salas    |Díaz     |Granada|200      |7  |5,760   |2015-09-10|2         |1           |1  |Daniel |Sáez     |Vega     |0.15    |
+|4  |Adrián|Suárez   |         |Jaén   |300      |8  |1,983.43|2017-10-10|4         |6           |6  |Manuel |Domínguez|Hernández|0.13    |
+|8  |Pepe  |Ruiz     |Santana  |Huelva |200      |9  |2,480.4 |2016-10-10|8         |3           |3  |Diego  |Flores   |Salas    |0.11    |
+|8  |Pepe  |Ruiz     |Santana  |Huelva |200      |10 |250.45  |2015-06-27|8         |2           |2  |Juan   |Gómez    |López    |0.13    |
+|3  |Adolfo|Rubio    |Flores   |Sevilla|         |11 |75.29   |2016-08-17|3         |7           |7  |Antonio|Vega     |Hernández|0.11    |
+|2  |Adela |Salas    |Díaz     |Granada|200      |12 |3,045.6 |2017-04-25|2         |1           |1  |Daniel |Sáez     |Vega     |0.15    |
+|6  |María |Santana  |Moreno   |Cádiz  |100      |13 |545.75  |2019-01-25|6         |1           |1  |Daniel |Sáez     |Vega     |0.15    |
+|6  |María |Santana  |Moreno   |Cádiz  |100      |14 |145.82  |2017-02-02|6         |1           |1  |Daniel |Sáez     |Vega     |0.15    |
+|1  |Aarón |Rivero   |Gómez    |Almería|100      |15 |370.85  |2019-03-11|1         |5           |5  |Antonio|Carretero|Ortega   |0.12    |
+|1  |Aarón |Rivero   |Gómez    |Almería|100      |16 |2,389.23|2019-03-11|1         |5           |5  |Antonio|Carretero|Ortega   |0.12    |
